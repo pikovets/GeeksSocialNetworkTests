@@ -16,7 +16,7 @@ class LoginTest extends BaseTest {
     private static final String PASSWORD = "SqjeiQBeEHlw3Lz";
 
     @Test
-    void testUserRegister() {
+    void testUserLogin() {
         driver.get(BASE_URL);
 
         driver.findElement(By.xpath("//input[@placeholder='Email']")).sendKeys(EMAIL);
