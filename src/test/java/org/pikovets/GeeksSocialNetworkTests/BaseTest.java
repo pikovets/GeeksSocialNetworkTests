@@ -19,6 +19,7 @@ public abstract class BaseTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-web-security");
         options.setCapability("se:name", "Geeks Social Network Test");
 
         driver = new RemoteWebDriver(new URL(seleniumUrl), options);
