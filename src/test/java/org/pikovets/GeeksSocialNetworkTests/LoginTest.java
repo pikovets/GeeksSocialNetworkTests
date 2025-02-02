@@ -10,12 +10,12 @@ import org.pikovets.GeeksSocialNetworkTests.pages.LoginPage;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.pikovets.GeeksSocialNetworkTests.pages.LoginPage.LOGIN_URL;
 import static org.pikovets.GeeksSocialNetworkTests.utils.AuthUtil.EMAIL;
 import static org.pikovets.GeeksSocialNetworkTests.utils.AuthUtil.PASSWORD;
 
 class LoginTest extends BaseTest {
 
-    private static final String LOGIN_URL = "http://frontend:8080/#/login/";
 
     private static final String INVALID_EMAIL = "test";
     private static final String INVALID_PASSWORD = "qwerty";

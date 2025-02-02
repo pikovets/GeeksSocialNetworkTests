@@ -7,6 +7,9 @@ import org.openqa.selenium.support.FindBy;
 public class HomePage extends BasePage {
     public static final String HOME_URL = "http://frontend:8080/#/";
 
+    @FindBy(xpath = "//div[@class='logout-btn']")
+    private WebElement logoutBtn;
+
     @FindBy(xpath = "//div[@class='add-post-container']//input[@class='add-post-text-input']")
     private WebElement postTextField;
 
@@ -21,6 +24,10 @@ public class HomePage extends BasePage {
 
     public HomePage(WebDriver webDriver) {
         super(webDriver);
+    }
+
+    public void clickLogoutBtn() {
+        logoutBtn.click();
     }
 
     public void clickAddPhotoBtn() {
