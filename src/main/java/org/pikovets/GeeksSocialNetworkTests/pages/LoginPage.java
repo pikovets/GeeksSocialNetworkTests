@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage {
+    public static final String LOGIN_URL = "http://frontend:8080/#/login";
+
     @FindBy(xpath = "//a[@href='/signup']")
     private WebElement signUpHref;
 
