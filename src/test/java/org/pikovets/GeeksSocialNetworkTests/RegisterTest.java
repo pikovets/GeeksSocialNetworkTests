@@ -10,12 +10,12 @@ import org.pikovets.GeeksSocialNetworkTests.pages.RegistrationPage;
 import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.pikovets.GeeksSocialNetworkTests.DatabaseUtil.deleteUserByEmail;
+import static org.pikovets.GeeksSocialNetworkTests.utils.DatabaseUtil.deleteUserByEmail;
 
 
 class RegisterTest extends BaseTest {
 
-    private static final String REGISTRATION_URL = "http://frontend:8080/#/signup";
+    private static final String REGISTRATION_URL = "http://frontend:8080/#/signup/";
     private static final String FULL_NAME = "Test test";
     private static final String EMAIL = "test@gmail.com";
     private static final String PASSWORD = "SqjeiQBeEHlw3Lz";

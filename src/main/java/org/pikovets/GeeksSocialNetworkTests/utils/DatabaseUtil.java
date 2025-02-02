@@ -1,4 +1,4 @@
-package org.pikovets.GeeksSocialNetworkTests;
+package org.pikovets.GeeksSocialNetworkTests.utils;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -18,10 +18,16 @@ public class DatabaseUtil {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
+    private DatabaseUtil() {
+    }
+
     public static void deleteUserByEmail(String email) {
         try {
             String sql = "SELECT id FROM \"user\" WHERE email = ?";
             String id = jdbcTemplate.queryForObject(sql, new Object[]{email}, String.class);
+            jdbcTemplate.update("DELETE FROM Comment_Like WHERE user_id = ?", UUID.fromString(id));
+            jdbcTemplate.update("DELETE FROM Comment WHERE user_id = ?", UUID.fromString(id));
+            jdbcTemplate.update("DELETE FROM Post WHERE author_id = ?", UUID.fromString(id));
             jdbcTemplate.update("DELETE FROM Profile WHERE user_id = ?", UUID.fromString(id));
             jdbcTemplate.update("DELETE FROM \"user\" WHERE email = ?", email);
         } catch (Exception e) {
