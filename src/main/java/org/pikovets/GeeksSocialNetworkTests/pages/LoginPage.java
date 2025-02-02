@@ -3,23 +3,22 @@ package org.pikovets.GeeksSocialNetworkTests.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
     @FindBy(xpath = "//a[@href='/signup']")
     private WebElement signUpHref;
 
-    @FindBy(xpath= "//input[@placeholder='Email']")
+    @FindBy(xpath = "//input[@placeholder='Email']")
     private WebElement emailField;
 
-    @FindBy(xpath= "//input[@placeholder='Password']")
+    @FindBy(xpath = "//input[@placeholder='Password']")
     private WebElement passwordField;
 
     @FindBy(className = "log-in-btn")
     private WebElement logInBtn;
 
     public LoginPage(WebDriver webDriver) {
-        PageFactory.initElements(webDriver, this);
+        super(webDriver);
     }
 
     public void enterEmail(String email) {

@@ -3,9 +3,8 @@ package org.pikovets.GeeksSocialNetworkTests.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class RegistrationPage {
+public class RegistrationPage extends BasePage {
     @FindBy(xpath = "//input[@placeholder='Full name']")
     private WebElement fullNameField;
 
@@ -19,7 +18,7 @@ public class RegistrationPage {
     private WebElement createAccountBtn;
 
     public RegistrationPage(WebDriver webDriver) {
-        PageFactory.initElements(webDriver, this);
+        super(webDriver);
     }
 
     public void enterFullName(String fullName) {
